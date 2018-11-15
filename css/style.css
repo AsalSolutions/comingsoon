@@ -1,0 +1,242 @@
+/* 
+Theme : Loopysec
+Author: Amin Abdisamad
+
+*/
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'PT Sans', 'Kodchasan', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: #777;
+  line-height: 1.6;
+  /* background-color: rgb(219, 190, 190); */
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+/* Animations */
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  85% {
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  85% {
+    transform: translateX(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInBtn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.boxArea {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.boxArea .headingText {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 40px;
+}
+.boxArea .headingTextMain {
+  display: block;
+  font-size: 60px;
+  font-weight: 600;
+  letter-spacing: 37px;
+  animation: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+.boxArea .headingTextSub {
+  display: block;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 4.7px;
+  animation: moveInRight 1s ease-in-out;
+}
+
+.btn:link,
+.btn:visited {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 10px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all 1s ease;
+  position: relative;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+  color: #aa0000;
+  background: #fff;
+}
+.btn-white::after {
+  background: #fff;
+}
+
+.btn::after {
+  content: '';
+  display: inline-block;
+  border-radius: 100px;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 1s ease;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.5) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animated {
+  animation: moveInBtn 3s ease-in-out 0.7s;
+  animation-fill-mode: backwards;
+}
+
+.header {
+  height: 100vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(170, 0, 0, 0.5),
+      rgba(137, 0, 0, 0.8)
+    ),
+    url('../img/store.jpeg');
+  background-size: cover;
+  background-position: top;
+  /* clip-path: polygon(5% 0, 100% 0%, 95% 100%, 0% 100%); */
+  /* clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%); */
+
+  position: relative;
+}
+
+.branding {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+}
+
+.logo {
+  height: 75px;
+}
+
+.countdown {
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.countdown div {
+  width: 10%;
+  padding: 20px;
+  border: 1px #fff solid;
+  border-radius: 10px;
+  /*background:rgb(185, 9, 9);*/
+  color: #fff;
+  opacity: 0.8;
+  margin: 15px;
+}
+
+.countdown span {
+  display: block;
+  font-size: 20px;
+}
+
+@media (max-width: 650px) {
+  .landing img {
+    width: 40%;
+  }
+
+  .landing h1 {
+    font-size: 40px;
+  }
+
+  .countdown {
+    font-size: 30px;
+    flex-direction: column;
+  }
+
+  .countdown div {
+    display: none;
+  }
+
+  .countdown div:first-child {
+    display: block;
+    width: 80%;
+    padding: 10px;
+  }
+}
+
+@media (max-height: 600px) {
+  img {
+    width: 20%;
+  }
+
+  p {
+    display: none;
+  }
+}
+
+@media (max-height: 400px) {
+  img {
+    padding-bottom: 30px;
+  }
+
+  h1 {
+    display: none;
+  }
+}
