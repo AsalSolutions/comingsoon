@@ -1,9 +1,9 @@
-const countdown = document.querySelector('.countdown');
+const countdown = document.querySelector(".countdown");
 // Launch date
-const launchDate = new Date('December 15, 2018 23:00:00').getTime();
+const launchDate = new Date("August 27, 2024 23:00:00").getTime();
 //console.log(launchDate);
 //update every second
-const intrvl = setInterval(function() {
+const intrvl = setInterval(function () {
   const now = new Date().getTime();
   const distance = launchDate - now;
   //console.log(distance);
@@ -31,7 +31,7 @@ const intrvl = setInterval(function() {
     // Stop countdown
     clearInterval(intrvl);
     // Style and output text
-    countdown.style.color = '#17a2b8';
-    countdown.innerHTML = 'Launched!';
+    countdown.style.color = "#17a2b8";
+    countdown.innerHTML = "Launched!";
   }
 }, 1000);
